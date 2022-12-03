@@ -23,7 +23,7 @@ Array.prototype.newMap = function(callbackFn) {
 Array.prototype.newFilter = function(callbackFn) {
   const arr = []
   for(let i=0; i< this.length; i++){
-    if (callbackFn.call(this, this[i], i, this)) {
+    if (callbackFn(this[i], i, this)) {
       arr.push(this[i])
     }
   }
@@ -34,7 +34,7 @@ Array.prototype.newReduce= function(callbackFn, initialValue) {
   let accumulator = initialValue;
 	for (let i = 0; i < this.length; i++) {
 	    if (accumulator !== undefined) {
-	      accumulator = callbackFn.call(undefined, accumulator, this[i],   i, this);
+	      accumulator = callbackFn(accumulator, this[i], i, this);
 	    } else {
 	      accumulator = this[i];
 	    }
