@@ -33,6 +33,7 @@ Array.prototype.newFilter = function(callbackFn) {
 const arr = [1,2,3,4]
 const temp = arr.map((item, i) => item * i+item)
 const temp1 = arr.newFilter((item, i) => item >= 3)
+
 arr.newMap((item, i, ar) => console.log(item, i, ar))
 
 console.log(temp)
